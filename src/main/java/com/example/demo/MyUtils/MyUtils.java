@@ -35,14 +35,12 @@ public class MyUtils {
     //获取四位随机数
     public static String getFourRandom() {
         Random random = new Random();
-        String four = random.nextInt(10000)+"";
-        int randLength = four.length();
-        if(randLength < 4){
-            for (int i = 0; i < 4-randLength; i++) {
-                four = "0"+four;
-            }
-        }
+        String four = Integer.toString(random.nextInt(8999)+1000);
         return four;
+    }
+    public static void main(String[] args){
+        Random random=new Random();
+        System.out.println(getFourRandom());
     }
 
     //获取json串
@@ -53,7 +51,7 @@ public class MyUtils {
         return json.toString();
     }
 
-    public static void main(String[] args){
+    /*public static void main(String[] args){
         for(int i=0;i<10;i++){
                 new Thread(new Runnable() {
                     @Override
@@ -80,7 +78,7 @@ public class MyUtils {
 
 
 
-        /*ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
+        ExecutorService cachedThreadPool = Executors.newCachedThreadPool();
         Runnable task1=new Runnable() {
             @Override
             public void run() {
@@ -101,7 +99,7 @@ public class MyUtils {
             }catch (Exception e){
                 e.printStackTrace();
             }
-        }*/
-    }
+        }
+    }*/
 
 }
